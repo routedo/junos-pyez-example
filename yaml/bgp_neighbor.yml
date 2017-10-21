@@ -1,0 +1,14 @@
+bgp_neighbor_info:
+ rpc: get-bgp-neighbor-information
+ item: bgp-peer
+ key: peer-address
+ view: bgp_neighbor_view
+
+bgp_neighbor_view:
+ fields:
+  peer_state: peer-state
+  peer_address: peer-address
+  peer_as: peer-as
+  receive_prefix: bgp-rib/recieved-prefix
+  accept_prefix: bgp-rib/accepted-prefix
+  active_prefix: bgp-rib/active-prefix

@@ -1,0 +1,11 @@
+mac_table_info:
+ rpc: get-ethernet-switching-table-information
+ item: l2ng-l2ald-mac-entry-vlan/l2ng-mac-entry
+ key: l2ng-l2-mac-address
+ view: mac_table_view
+
+mac_table_view:
+ fields:
+  mac_address: l2ng-l2-mac-address
+  interface: l2ng-l2-mac-logical-interface
+  vlan: l2ng-l2-mac-vlan-name

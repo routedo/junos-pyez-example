@@ -1,0 +1,28 @@
+junos_logical_interface_terse:
+ rpc: get-interface-information
+ item: logical-interface
+ key: name
+ view: junos_logical_interface_terse_view
+ 
+
+junos_logical_interface_terse_view:
+ fields:
+  name: name
+  admin_status: admin-status
+  link_status: oper-status
+  local_adress: address-family/interface-address/ifa-local
+ 
+
+junos_logical_interface_general_terse:
+ rpc: get-interface-information
+ item: physical-interface/logical-interface
+ key: name
+ view: junos_logical_interface_general_view
+ 
+
+junos_logical_interface_general_view:
+ fields:
+  name: name
+  admin_status: admin-status
+  link_status: oper-status
+  local_adress: address-family/interface-address/ifa-local
