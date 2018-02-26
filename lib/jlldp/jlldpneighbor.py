@@ -1,27 +1,29 @@
-from jnpr.junos import Device
+"""
+Query LLDP data from a Juniper network device.
+"""
+
 import sys
+from jnpr.junos import Device
 from jnpr.junos.factory import loadyaml
 
-
-## dev = Juniper device connection 
-## return = Returns the LLDP neighbor table 
-
 def juniper_lldp_neighbor(dev):
+    '''
+    This function is used to gather LLDP data from a Juniper network device.
 
-	try:
-		state = 'None'
-		globals().update(loadyaml('yaml/lldp_neighbor.yml'))
-		lldp_ni = lldp_neighbor_info(dev).get()
+    dev = Juniper device connection
+    return = Returns the LLDP neighbor table
+    '''
 
-		return(lldp_ni)
+    try:
+        globals().update(loadyaml('yaml/lldp_neighbor.yml'))
+        lldp_ni = lldp_neighbor_info(dev).get()
 
-	except Exception as err:
-		print(err)
-		dev.close()
-		sys.exit(1)
-		return
-	
-	return
+        return lldp_ni
 
+    except Exception as err:
+        print(err)
+        dev.close()
+        sys.exit(1)
+        return
 
-
+    return
