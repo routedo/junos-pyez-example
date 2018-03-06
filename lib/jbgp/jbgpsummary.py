@@ -7,12 +7,12 @@ from jnpr.junos import Device
 from jnpr.junos.factory import loadyaml
 
 def juniper_bgp_summary(dev):
-    '''
+    """
     This function queries BGP summary information on a Juniper network device.
 
     dev = Juniper device connection
     return = Returns BGP summary information
-    '''
+    """
 
     try:
         globals().update(loadyaml('yaml/bgp_summary.yml'))

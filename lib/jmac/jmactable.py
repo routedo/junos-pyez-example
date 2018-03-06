@@ -7,14 +7,14 @@ from jnpr.junos import Device
 from jnpr.junos.factory import loadyaml
 
 def juniper_mac_table(dev, template):
-    '''
+    """
     This function is used to query the mac table on a Juniper network device.
 
     dev = Juniper device connection
     template = YAML file
     mac = MAC address (Format: xx:xx:xx:xx:xx:xx)
     return = Returns the complete mac table
-    '''
+    """
 
     try:
         globals().update(loadyaml(template))

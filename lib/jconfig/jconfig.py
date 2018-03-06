@@ -8,12 +8,12 @@ from jnpr.junos.utils.config import Config
 from jnpr.junos.exception import CommitError, LockError, UnlockError
 
 def juniper_config_commit(dev, file_location):
-    '''
+    """
     This function is used to configure a Juniper network device.
 
     dev = Juniper device connection
     file_location = Location of configuration changes to push.  Changes should be in the set format.
-    '''
+    """
 
     try:
         cfg = Config(dev)

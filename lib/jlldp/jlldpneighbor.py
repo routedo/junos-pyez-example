@@ -7,12 +7,12 @@ from jnpr.junos import Device
 from jnpr.junos.factory import loadyaml
 
 def juniper_lldp_neighbor(dev):
-    '''
+    """
     This function is used to gather LLDP data from a Juniper network device.
 
     dev = Juniper device connection
     return = Returns the LLDP neighbor table
-    '''
+    """
 
     try:
         globals().update(loadyaml('yaml/lldp_neighbor.yml'))

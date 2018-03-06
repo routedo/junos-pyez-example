@@ -7,12 +7,12 @@ import re
 import socket
 
 def ip_to_dns(ip_dns_string):
-    '''
+    """
     This function is used to query DNS.
 
     ip_dns_string = IP Address to run DNS query on
     return = Returns result of DNS query
-    '''
+    """
 
     try:
         ip_string = re.match('\d+.\d+.\d+.\d+', ip_dns_string)
